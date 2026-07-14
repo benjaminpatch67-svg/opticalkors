@@ -1,0 +1,83 @@
+/* ==========================================================================
+   ÓPTICA Kors — Responsive
+   Enfoque mobile-first: los estilos base en style.css ya funcionan en
+   pantallas grandes; aquí se ajustan los quiebres de grilla y espaciados
+   para tablet y móvil.
+   ========================================================================== */
+
+/* ------------------------------ 1200px -------------------------------- */
+@media (max-width: 1200px){
+  .services-grid{ grid-template-columns: repeat(3, 1fr); }
+  .catalog-grid{ grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ------------------------------ 991px ---------------------------------- */
+@media (max-width: 991px){
+  .nav-links{ display:none; }
+  .nav-toggle{ display:flex; }
+
+  .nav-links.mobile-open{
+    display:flex; flex-direction:column; align-items:flex-start; gap:1.4rem;
+    position:fixed; inset: 76px 0 0 0; background: var(--color-white);
+    padding: 2rem var(--container-x); overflow-y:auto; z-index: 999;
+  }
+  .nav-links.mobile-open a{ font-size:1.15rem; }
+
+  .hero .container-xl{ grid-template-columns: 1fr; text-align:center; }
+  .hero-sub{ margin-inline:auto; }
+  .hero-actions{ justify-content:center; }
+  .hero-trust{ justify-content:center; }
+  .focus-frame{ margin-top: 2.5rem; max-width: 340px; }
+
+  .about-grid{ grid-template-columns: 1fr; }
+  .about-media{ margin-bottom: 2.5rem; }
+  .about-media .float-card{ right: 1rem; }
+  .pillars{ grid-template-columns: 1fr 1fr; }
+
+  .services-grid{ grid-template-columns: repeat(2, 1fr); }
+  .catalog-grid{ grid-template-columns: repeat(2, 1fr); }
+  .promo-grid{ grid-template-columns: 1fr 1fr; }
+  .blog-grid{ grid-template-columns: 1fr 1fr; }
+
+  .appointment{ grid-template-columns: 1fr; }
+  .appt-steps{ flex-direction:row; flex-wrap:wrap; gap:1.5rem; margin-bottom: 1rem; }
+  .appt-step{ flex: 1 1 260px; }
+
+  .contact-grid{ grid-template-columns: 1fr; }
+  .map-frame{ min-height: 300px; }
+
+  .footer-grid{ grid-template-columns: 1fr 1fr; row-gap: 2.5rem; }
+}
+
+/* ------------------------------ 768px ---------------------------------- */
+@media (max-width: 768px){
+  :root{ --section-y: 3.6rem; }
+
+  .stats-strip{ grid-template-columns: 1fr; gap: 2rem; text-align:center; }
+  .pillars{ grid-template-columns: 1fr; }
+  .services-grid{ grid-template-columns: 1fr; }
+  .catalog-grid{ grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .promo-grid{ grid-template-columns: 1fr; }
+  .blog-grid{ grid-template-columns: 1fr; }
+
+  .form-row{ grid-template-columns: 1fr; }
+  .appt-form{ padding: 1.6rem; }
+  .appt-steps{ flex-direction:column; }
+
+  .footer-grid{ grid-template-columns: 1fr; text-align:left; }
+  .footer-bottom{ flex-direction:column; text-align:center; }
+
+  .brands-track{ gap: 2.6rem; }
+  .brands-track span{ font-size: 1.15rem; }
+}
+
+/* ------------------------------ 520px ---------------------------------- */
+@media (max-width: 520px){
+  .catalog-grid{ grid-template-columns: 1fr; }
+  .hero-actions{ flex-direction:column; width:100%; }
+  .hero-actions .btn{ width:100%; }
+  .float-actions{ right: 1rem; bottom: 1rem; }
+  .float-btn{ width:50px; height:50px; font-size:1.2rem; }
+  .contact-item{ flex-direction:column; }
+  .contact-item i{ margin-bottom:.4rem; }
+}
